@@ -1,0 +1,33 @@
+{{ $dot := . }}
+{{ $ctx := .context }}
+<ul class="rm-default-ul-styles">
+  {{ range $index, $element := .data }}
+  <li>
+    <div class="checkbox-container">
+      <input
+        id="cb{{ $index }}"
+        class="topic-checkbox"
+        type="checkbox"
+        name="field"
+        value="option"
+        aria-label="toc-link-label-1"
+      /><label for="cb${{ $index }}" id="toc-link-label-{{ $index }}"
+        ><span class="sr-only">{{ $element.Name }}</span></label
+      >
+    </div>
+    {{ if $element.Children }}
+    <i class="icon-topic-collapse fa fa-angle-down" aria-hidden="true"></i>
+    {{ end }}
+    <a
+      href="{{ $element.URL }}"
+      data-guid="GUID-{{ $index }}"
+      name="&amp;lpos=Tech Pub_toc links_GUID-{{ $element.Name }} : 0"
+    >
+      {{ $element.Name }}
+    </a>
+    {{ if $element.Children }}
+      {{ partial "sidebar.html" (dict "context" $ctx "data" $element.Children) }}
+    {{ end }}
+  </li>
+  {{ end }}
+</ul>

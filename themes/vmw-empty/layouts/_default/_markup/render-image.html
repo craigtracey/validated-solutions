@@ -1,0 +1,2 @@
+{{ $flattenedURL := replaceRE "^/" "" .Destination |  replaceRE "/" "-" }}
+<img src="/images/{{ $flattenedURL }}" alt="{{ .Text }}" {{ with .Title }} title="{{ . }}" {{ end }} />
