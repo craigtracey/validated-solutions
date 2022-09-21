@@ -1,0 +1,42 @@
+name: github pages
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+          # extended: true
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: convert content
+        run: |
+          mkdir -p ./public/reference-designs
+          mkdir -p ./public/deployment-guides
+          pwd
+          ls -al
+          python scripts/transfer.py . ./public
+
+      - name: Build
+        run: hugo --minify -c ./public
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/hugo-demo'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
