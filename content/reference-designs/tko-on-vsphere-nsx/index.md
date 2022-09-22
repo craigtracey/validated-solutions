@@ -10,7 +10,7 @@ This document lays out a reference architecture related for VMware Tanzu for Kub
 
 This reference design is based on the architecture and components described in [VMware Tanzu for Kubernetes Operations Reference Architecture](index.md)
 
-![Tanzu Edition reference architecture diagram](img/reference-designs/tko-on-vsphere-nsx/tkgm-diagram.png)
+![Tanzu Edition reference architecture diagram](img/reference-designs/index/tkgm-diagram.png)
 
 ## Supported Component Matrix
 
