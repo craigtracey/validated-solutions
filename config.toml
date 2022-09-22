@@ -1,4 +1,4 @@
-baseURL = 'https://craigtracey.github.io'
+baseURL = 'https://craigtracey.github.io/validated-solutions'
 languageCode = 'en-us'
 title = 'Tanzu Validated Solutions'
 theme = 'vmw-preview'
