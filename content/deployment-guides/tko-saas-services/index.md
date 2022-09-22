@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tko-saas-services.html
+title: Configure Tanzu SaaS Components for Tanzu for Kubernetes Operations
 ---
 # Configure Tanzu SaaS Components for Tanzu for Kubernetes Operations
 

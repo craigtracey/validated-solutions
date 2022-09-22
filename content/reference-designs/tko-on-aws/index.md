@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tko-on-aws.html
+title: VMware Tanzu for Kubernetes Operations on AWS Reference Design
 ---
 # VMware Tanzu for Kubernetes Operations on AWS Reference Design
 
@@ -12,7 +13,7 @@ The following reference design is based on the architecture and components descr
 
 > **Note:** This reference design is supported and validated for customers deploying Tanzu Kubernetes Grid 1.5.x on AWS.
 
-![Tanzu Edition reference design diagram](.//img/reference-designs/tko-on-aws/tkg-aws-overview.png)
+![Tanzu Edition reference design diagram](./img/reference-designs/tko-on-aws/tkg-aws-overview.png)
 
 ## Network Overview
 
@@ -21,7 +22,7 @@ The following network diagram shows the network layout used with this reference 
 1. One private subnet for each AWS availability zone (AZ). These subnets are not automatically allocated a public IP address. The default gateway is a NAT gateway.
 1. One public subnet for each AWS availability zone (AZ). These subnets are automatically allocated a public IP address. The default gateway is an Internet gateway if subnet is connected to the Internet. A public subnet is optional if you do not need Internet ingress or egress.  
 
-![TKG AWS network overview diagram](.//img/reference-designs/tko-on-aws/tkg-aws-network-overview.png)
+![TKG AWS network overview diagram](./img/reference-designs/tko-on-aws/tkg-aws-network-overview.png)
 
 ### Network Recommendations
 
@@ -61,7 +62,7 @@ Based on your application needs and desired outcomes, you can organize your work
 
 Most use cases require only a single VPC spread across multiple AZs as shown in the reference diagram. If more separation is needed within one VPC, more subnets can be used to provide better IP based visibility to corporate firewalls.
 
-![TKG on AWS with Single VPC and Multiple Availability Zones diagram](.//img/reference-designs/tko-on-aws/tkg-aws-single-vpc-multi-az.jpg)
+![TKG on AWS with Single VPC and Multiple Availability Zones diagram](./img/reference-designs/tko-on-aws/tkg-aws-single-vpc-multi-az.jpg)
 
 
 ### Multiple VPC with Multiple Availability Zones
@@ -70,11 +71,11 @@ For more separation of application workloads on AWS, you can deploy separate Kub
 
 The following diagram shows an example architecture with multiple VPCs. The control plane load balancers in the example architecture are configured as internal load balancers.
 
-![TKG on AWS with Multiple VPCs and Multiple Availability Zones diagram](.//img/reference-designs/tko-on-aws/tkg-aws-multi-vpc-multi-az.jpg)
+![TKG on AWS with Multiple VPCs and Multiple Availability Zones diagram](./img/reference-designs/tko-on-aws/tkg-aws-multi-vpc-multi-az.jpg)
 
 Another variant of multiple VPC and multiple AZ design is to have one VPC for the control plane and another for just workload clusters. The following diagram shows such a design.
 
-![TKG on AWS with Segregated VPCs for control plane and workloads diagram](.//img/reference-designs/tko-on-aws/tkg-aws-multi-vpc-multi-az-separated-control-plane-and-workloads.jpg)
+![TKG on AWS with Segregated VPCs for control plane and workloads diagram](./img/reference-designs/tko-on-aws/tkg-aws-multi-vpc-multi-az-separated-control-plane-and-workloads.jpg)
 
 
 ## Availability
@@ -102,7 +103,7 @@ See [AWS service quotas](https://docs.aws.amazon.com/general/latest/gr/aws_servi
 
 This reference design uses Tanzu Kubernetes Grid to create and manage ubiquitous Kubernetes clusters on AWS using Kubernetes [Cluster API](https://cluster-api.sigs.k8s.io/). Tanzu Kubernetes Grid functions through the creation of a management cluster which houses the Cluster API.  The Cluster API then interacts with the infrastructure provider to service workload Kubernetes cluster lifecycle requests.  
 
-![Tanzu Kubernetes Grid Kickstart Install Screen](.//img/reference-designs/tko-on-aws/tkg-kickstart-install.png)  
+![Tanzu Kubernetes Grid Kickstart Install Screen](./img/reference-designs/tko-on-aws/tkg-kickstart-install.png)  
 
 Tanzu Editions include components for observability, as well as container registry. We recommended installing the necessary components into a centralized shared services cluster.
 
@@ -117,7 +118,7 @@ Registering Management cluster and attaching workload clusters to Tanzu Mission 
   * Data protection: managing Velero deployment, configuration, and schedule to ensure that cluster manifests and persistent volumes are backed up & restorable
   * Inspection: running a Sonobouy conformance check suite to ensure Kubernetes cluster functionality
 
-![VMware Tanzu Mission Control - global policy control plane diagram](.//img/reference-designs/tko-on-aws/tmc-global-policy-control-plane.png)
+![VMware Tanzu Mission Control - global policy control plane diagram](./img/reference-designs/tko-on-aws/tmc-global-policy-control-plane.png)
 
 
 For a complete list of Tanzu Mission Control features, see [VMware Tanzu Mission
@@ -125,13 +126,13 @@ Control Feature Comparison](https://content.cdntwrk.com/files/aT0xMjk5NjY3JnY9OS
 
 To Register your management or supervisor cluster for management through Tanzu Mission Control, navigate to **Administration > Management Cluster** on the Tanzu Mission Control console and follow the prompts.
 
-![Tanzu Mission Control Register Management cluster](.//img/reference-designs/tko-on-aws/tmc-register-management-cluster.jpg)
+![Tanzu Mission Control Register Management cluster](./img/reference-designs/tko-on-aws/tmc-register-management-cluster.jpg)
 
 To attach your cluster for management through Tanzu Mission Control, navigate to **Clusters > Attach Cluster** on the Tanzu Mission Control console and follow the prompts.
 
 > **Note:** If a workload cluster under management requires a proxy to access the Internet, you can use the Tanzu Mission Control CLI to [generate the YAML](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/tanzumc-using/GUID-97672F56-2AD4-46E6-94E1-805ED38D06C7.html) necessary to install Tanzu Mission Control components on it.
 
-![Tanzu Mission Control attach cluster](.//img/reference-designs/tko-on-aws/tmc-attach-cluster-screen.png)
+![Tanzu Mission Control attach cluster](./img/reference-designs/tko-on-aws/tmc-attach-cluster-screen.png)
 
 ## Ingress and Load Balancing
 
@@ -141,7 +142,7 @@ For workload clusters, the Tanzu Kubernetes Grid [Contour ingress controller pac
 
 If you have deployed with both public and private subnets, by default you will get an Internet-facing load balancer. If you want a private load balancer, you can specifically request one by setting `service.beta.kubernetes.io/aws-load-balancer-internal: "true"` in the annotations of the service. This setting also applies to the Contour ingress and controls whether Contour is internal-facing or external-facing.  
 
-![TKG on AWS ingress with Contour diagram](.//img/reference-designs/tko-on-aws/tkg-aws-ingress-contour.jpg)
+![TKG on AWS ingress with Contour diagram](./img/reference-designs/tko-on-aws/tkg-aws-ingress-contour.jpg)
 
 In Tanzu Kubernetes Grid, you can optionally deploy the [external-dns package](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-kubernetes-grid-15/GUID-packages-external-dns.html), which automates the updates to DNS records in AWS (Route53) associated with ingress resources or LoadBalancer services. This can automate away toil associated with DNS record management for externally exposed services.
 
@@ -158,7 +159,7 @@ Pinniped consists of following components:
 
 The following diagram shows the Pinniped authentication flow with an external IDP. In the diagram, the blue arrows represent the authentication flow between the workload cluster, the management cluster and the external IDP. The green arrows represent Tanzu CLI and `kubectl` traffic between the workload cluster, the management cluster and the external IDP.
 
-![Authentication with pinniped](.//img/reference-designs/tko-on-aws/authwith-Pinniped.png)
+![Authentication with pinniped](./img/reference-designs/tko-on-aws/authwith-Pinniped.png)
 
 See the [Pinniped docs](https://pinniped.dev/docs/) for more information on how to integrate Pinniped into Tanzu Kubernetes Grid with OIDC providers and LDAP.
 
@@ -187,8 +188,8 @@ The following table describes the plugins we recommend for this design:
 | Wavefront Kubernetes Integration | Collect metrics from Kubernetes clusters and pods | Kubernetes container and POD statistics | POD CPU usage rate |
 | Wavefront by VMware for Istio | Adapts Istio collected metrics and forwards to Wavefront | Istio metrics including request rates, trace rates, throughput, etc. | Request rate (Transactions per Second) |
 
-![kubernetes-metrics-1](.//img/reference-designs/tko-on-aws/image11.png)
-![kubernetes-metrics-2](.//img/reference-designs/tko-on-aws/image6.png)
+![kubernetes-metrics-1](./img/reference-designs/tko-on-aws/image11.png)
+![kubernetes-metrics-2](./img/reference-designs/tko-on-aws/image6.png)
 
 #### Custom Tanzu Observability Dashboards
 
@@ -203,9 +204,9 @@ Prometheus exposes scrapable metrics endpoints for various monitoring targets th
 
 Grafana is responsible for visualizing Prometheus metrics without the need to manually write the `PromQL` queries. You can create custom charts and graphs in addition to the pre-packaged options.
 
-![Tanzu Observability CPU utilization dashboard](.//img/reference-designs/tko-on-aws/tanzu-observability-cpu-dashboard.png)
+![Tanzu Observability CPU utilization dashboard](./img/reference-designs/tko-on-aws/tanzu-observability-cpu-dashboard.png)
 
-![Tanzu Observability availability dashboard](.//img/reference-designs/tko-on-aws/tanzu-observability-availability-dashboard.png)
+![Tanzu Observability availability dashboard](./img/reference-designs/tko-on-aws/tanzu-observability-availability-dashboard.png)
 
 Prometheus and Grafana are user-managed packages available with Tanzu Kubernetes Grid. For more information about packages bundled with Tanzu Kubernetes Grid, see [Install and Configure Packages](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-kubernetes-grid-15/GUID-packages-index.html). For more information about user-managed packages, see [User-Managed Packages](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-kubernetes-grid-15/GUID-packages-user-managed-index.html)
 

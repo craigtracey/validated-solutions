@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tko-saas.html
+title: Tanzu for Kubernetes Operations SaaS Integration
 ---
 # Tanzu for Kubernetes Operations SaaS Integration
 
@@ -117,7 +118,7 @@ Tanzu Service Mesh has the following architecture at a high level:
 
 * **Ingress and Egress Gateways:** Data-plane components that run in each Kubernetes cluster and handle north-south traffic going in and out of the service mesh.
 
-   ![Tanzu Service Mesh Architecture](/img/reference-designs/tko-saas/TSM-Architecture.png)
+   ![Tanzu Service Mesh Architecture](img/reference-designs/tko-saas/TSM-Architecture.png)
 
 ## Tanzu Service Mesh Key Concepts
 
@@ -136,7 +137,7 @@ To learn more about the key components, refer to the [Tanzu Service Mesh product
 
 With global namespaces in Tanzu Service Mesh, you can easily connect and secure the services in your application across clusters. You can add the services in your application to a global namespace to have them automatically discovered and connected across the clusters.
 
-   ![Tanzu Service Mesh Global Namespace](/img/reference-designs/tko-saas/TSM-Global-Namespace.png)
+   ![Tanzu Service Mesh Global Namespace](img/reference-designs/tko-saas/TSM-Global-Namespace.png)
 
 A Global Namespace connects resources and workloads that form the application into a virtual unit. Each GNS is an isolated domain that provides automatic service discovery and manages the following functions that are part of it, no matter where they are located:
 
@@ -152,19 +153,19 @@ A Global Namespace connects resources and workloads that form the application in
 
   The global namespace enables users to view the topology of the services or a cluster as a chart. The topology graph can be used to understand service dependencies and determine the health of the services and the performance metrics related to each service. The topology graph view is generated dynamically by observing the traffic that is flowing between the services in a global namespace or a cluster.
 
-  ![Tanzu Service Mesh Service Dependency](/img/reference-designs/tko-saas/TSM-App-Connectivity.png)
+  ![Tanzu Service Mesh Service Dependency](img/reference-designs/tko-saas/TSM-App-Connectivity.png)
 
 - Intelligent, graph-aware application resiliency and scalability
 
   As application usage and traffic increase, Tanzu Service Mesh can automatically scale application instances up and down to ensure that applications perform within the bounds of their SLO policies and meet performance objectives for SLA compliance.
 
-  ![Tanzu Service Mesh Resiliency](/img/reference-designs/tko-saas/TSM-Resiliency.png)
+  ![Tanzu Service Mesh Resiliency](img/reference-designs/tko-saas/TSM-Resiliency.png)
 
 - Deep application visibility and actionable insights
 
   Tanzu Service Mesh help teams overcome the performance and security visibility gaps resulting from distributed microservices architectures and adoption of multiple platforms and clouds. Operations teams have access to rich troubleshooting tools, including multi-cloud topology maps and traffic flows, performance and health metrics, and application-to-infrastructure correlation.
 
-  ![Tanzu Service Mesh Observability](/img/reference-designs/tko-saas/TSM-Observability.png)
+  ![Tanzu Service Mesh Observability](img/reference-designs/tko-saas/TSM-Observability.png)
 
 ## Deployment Instructions
 

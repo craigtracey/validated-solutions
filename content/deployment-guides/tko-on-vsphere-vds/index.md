@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tko-on-vsphere-vds.html
+title: Deploy Tanzu for Kubernetes Operations on vSphere with VMware VDS
 ---
 #  Deploy Tanzu for Kubernetes Operations on vSphere with VMware VDS
 

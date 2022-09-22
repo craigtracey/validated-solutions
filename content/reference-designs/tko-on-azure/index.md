@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tko-on-azure.html
+title: VMware Tanzu for Kubernetes Operations on Azure Reference Design
 ---
 # VMware Tanzu for Kubernetes Operations on Azure Reference Design
 
@@ -13,7 +14,7 @@ This document lays out a reference design for deploying VMware Tanzu for Kuberne
 
 > **Note:** This reference design is supported and validated for customers deploying Tanzu Kubernetes Grid 1.4 on Microsoft Azure.
 
-![Tanzu Standard component set](/img/reference-designs/tko-on-azure/tkg-overview-azure.png)
+![Tanzu Standard component set](img/reference-designs/tko-on-azure/tkg-overview-azure.png)
 
 ## Cluster Creation and Management
 
@@ -21,7 +22,7 @@ This reference design uses Tanzu Kubernetes Grid to create and manage ubiquitous
 
 The Tanzu Kubernetes Grid user interface (UI) provides a guided deployment experience that is tailored for Microsoft Azure. The Tanzu Kubernetes Grid installer runs either on an operator's own machine (it uses Docker) or through a bootstrap machine or a jump box.
 
-![TKG installer user interface](/img/reference-designs/tko-on-azure/image004.png)
+![TKG installer user interface](img/reference-designs/tko-on-azure/image004.png)
 
 > **Note:** When using a bootstrap machine or a jump box, you may not be able to use the Tanzu Kubernetes Grid UI to build your configuration of the management and workload clusters. In such cases, use the following sample YAML file to help kickstart the installation process.
 
@@ -75,13 +76,13 @@ VMware recommends using one of the following production-level network designs fo
 ### Same Virtual Network
 
 You can set up your networking such that the Tanzu Kubernetes Grid management cluster and workload clusters are in the same VNet as the bootstrap machine. Each cluster is in a separate subnet. The control plane and worker nodes are also placed in separate subnets.
-![TKG on Azure (Single VNet)](/img/reference-designs/tko-on-azure/one-vnet.png)
+![TKG on Azure (Single VNet)](img/reference-designs/tko-on-azure/one-vnet.png)
 
 ### Separate Virtual Networks
 
 The following design uses a hub-and-spoke model. The Tanzu Kubernetes clusters are separated into different VNets. This network design requires that the corresponding VNets are peered with one another so that the management cluster can correctly communicate with the workload clusters. This approach is recommended by Microsoft.
 
-![TKG on Azure (Two VNets Peered)](/img/reference-designs/tko-on-azure/two-vnets.png)
+![TKG on Azure (Two VNets Peered)](img/reference-designs/tko-on-azure/two-vnets.png)
 
 ### Considerations
 
@@ -221,7 +222,7 @@ Tanzu Mission Control provides the following capabilities:
   * Data protection: managing Velero deployment, configuration, and schedule to ensure that cluster manifests and persistent volumes are backed up and restorable
   * Inspection: running a Sonobouy conformance check suite to ensure Kubernetes cluster functionality
 
-![VMware Tanzu Mission Control - global policy control plane diagram](/img/reference-designs/tko-on-azure/tmc-global-policy-control-plane.png)
+![VMware Tanzu Mission Control - global policy control plane diagram](img/reference-designs/tko-on-azure/tmc-global-policy-control-plane.png)
 
 For a complete list of features that Tanzu Mission Control includes with Tanzu, see [this chart](https://content.cdntwrk.com/files/aT0xMjk5NjY3JnY9OSZpc3N1ZU5hbWU9dG1jLWNvbXBhcmlzb24tY2hhcnQmY21kPWQmc2lnPTc2YTA2N2E4MWRjMmVkNjE0ZDcwMTlmNjc4NjhmMjI4).  
 
@@ -229,7 +230,7 @@ To attach your cluster for management through Tanzu Mission Control, navigate to
 
 > **Note:** If a workload cluster under management requires a proxy to access the Internet, you can use the Tanzu Mission Control CLI to [generate the YAML](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/tanzumc-using/GUID-97672F56-2AD4-46E6-94E1-805ED38D06C7.html) necessary to install Tanzu Mission Control components on it.
 
-![Tanzu Mission Control attach cluster screen](/img/reference-designs/tko-on-azure/tmc-attach-cluster-screen.png)
+![Tanzu Mission Control attach cluster screen](img/reference-designs/tko-on-azure/tmc-attach-cluster-screen.png)
 
 ## Ingress and Load Balancing
 
@@ -251,7 +252,7 @@ Pinniped consists of following components:
 
 The following diagram shows the Pinniped authentication flow with an external IDP. In the diagram, the blue arrows represent the authentication flow between the workload cluster, the management cluster, and the external IDP. The green arrows represent Tanzu CLI and `kubectl` traffic between the workload cluster, the management cluster, and the external IDP.
 
-![Authentication with pinniped](/img/reference-designs/tko-on-azure/authwith-Pinniped.png)
+![Authentication with pinniped](img/reference-designs/tko-on-azure/authwith-Pinniped.png)
 
 See the [Pinniped Docs](https://pinniped.dev/docs/) for more information on how to integrate Pinniped into Tanzu Kubernetes Grid with OIDC providers and LDAP.
 
@@ -279,8 +280,8 @@ You can configure Tanzu Observability with an array of capabilities. The followi
 | Wavefront Kubernetes Integration | Collects metrics from Kubernetes clusters and pods | Kubernetes container and POD statistics | POD CPU usage rate |
 | Wavefront by VMware for Istio | Adapts Istio collected metrics and forwards to Wavefront | Istio metrics including request rates, trace rates, throughput, etc. | Request rate (Transactions per Second) |
 
-![kubernetes-metrics-1](/img/reference-designs/tko-on-azure/image11.png)
-![kubernetes-metrics-2](/img/reference-designs/tko-on-azure/image6.png)
+![kubernetes-metrics-1](img/reference-designs/tko-on-azure/image11.png)
+![kubernetes-metrics-2](img/reference-designs/tko-on-azure/image6.png)
 
 #### Custom Tanzu Observability Dashboards
 
@@ -296,9 +297,9 @@ Grafana is responsible for visualizing Prometheus metrics without the need to ma
 
 The Tanzu Kubernetes Grid extensions bundles contain instructions and manifests for deploying these tools out.
 
-![Tanzu Observability CPU utilization dashboard](/img/reference-designs/tko-on-azure/tanzu-observability-cpu-dashboard.png)
+![Tanzu Observability CPU utilization dashboard](img/reference-designs/tko-on-azure/tanzu-observability-cpu-dashboard.png)
 
-![Tanzu Observability availability dashboard](/img/reference-designs/tko-on-azure/tanzu-observability-availability-dashboard.png)
+![Tanzu Observability availability dashboard](img/reference-designs/tko-on-azure/tanzu-observability-availability-dashboard.png)
 
 Prometheus and Grafana are user-managed packages available with Tanzu Kubernetes Grid. For more information about packages bundled with Tanzu Kubernetes Grid, see [Install and Configure Packages](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.4/vmware-tanzu-kubernetes-grid-14/GUID-packages-index.html). For more information about user-managed packages, see [User-Managed Packages](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.4/vmware-tanzu-kubernetes-grid-14/GUID-packages-user-managed-index.html)
 

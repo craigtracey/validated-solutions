@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tko-on-vsphere-with-tanzu.html
+title: VMware Tanzu for Kubernetes Operations using vSphere with Tanzu Reference Design
 ---
 # VMware Tanzu for Kubernetes Operations using vSphere with Tanzu Reference Design
 
@@ -9,7 +10,7 @@ This document provides a reference design for deploying VMware Tanzu for Kuberne
 
 The following reference design is based on the architecture and components described in [VMware Tanzu for Kubernetes Operations Reference Architecture](index.md).
 
-![Diagram of TKO using vSphere with Tanzu Reference Architecture](.//img/reference-designs/tko-on-vsphere-with-tanzu/TKO-VWT-Reference-Design.jpg)
+![Diagram of TKO using vSphere with Tanzu Reference Architecture](./img/reference-designs/tko-on-vsphere-with-tanzu/TKO-VWT-Reference-Design.jpg)
 
 ## vSphere with Tanzu Components
 
@@ -34,9 +35,9 @@ The following reference design is based on the architecture and components descr
 
 	vSphere with Tanzu offers several default VM classes. You can use them as is or you can create new VM classes. The following screenshot shows the default VM classes that are available in vSphere with Tanzu.
 
-	![Screenshot of default VM Classes in vSphere with Tanzu](/img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt01.jpg)
+	![Screenshot of default VM Classes in vSphere with Tanzu](img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt01.jpg)
 
-	![Screenshot of default VM Classes in vSphere with Tanzu (cont.)](/img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt02.jpg)
+	![Screenshot of default VM Classes in vSphere with Tanzu (cont.)](img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt02.jpg)
 
 - **Storage Classes in vSphere with Tanzu:** A StorageClass provides a way for administrators to describe the classes of storage they offer. Different classes can map to quality-of-service levels, to backup policies, or to arbitrary policies determined by the cluster administrators.
 
@@ -53,7 +54,7 @@ The following table provides recommendations for configuring VM Classes/Storage 
 
 The following diagram shows the high-level architecture of vSphere with Tanzu.
 
-![Diagram of vSphere with Tanzu Architecture](/img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt03.png)
+![Diagram of vSphere with Tanzu Architecture](img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt03.png)
 
 The Supervisor Cluster consists of the following:
 
@@ -63,13 +64,13 @@ The Supervisor Cluster consists of the following:
 
 The following diagram shows the general architecture of the Supervisor Cluster.
 
-![Diagram of Supervisor Cluster Architecture](/img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt04.jpg)
+![Diagram of Supervisor Cluster Architecture](img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt04.jpg)
 
 After a Supervisor Cluster is created, the vSphere administrator creates vSphere namespaces. When initially created, vSphere namespaces have unlimited resources within the Supervisor Cluster. The vSphere administrator defines the limits for CPU, memory, and storage, as well as the number of Kubernetes objects such as deployments, replica sets, persistent volumes, etc. that can run within the namespace. These limits are configured for each vSphere namespace.
 
 For the maximum supported number, see the **vSphere with Tanzu [Configuration Maximums](https://configmax.esp.vmware.com/guest?vmwareproduct=vSphere&release=vSphere%207.0&categories=70-58,71-0)** guide.
 
-![vSphere Namespace](/img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt05.png)
+![vSphere Namespace](img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt05.png)
 
 To provide tenants access to namespaces, the vSphere administrator assigns permission to users or groups available within an identity source that is associated with vCenter Single Sign-On.
 
@@ -116,7 +117,7 @@ vSphere with Tanzu is agnostic about which storage option you choose. For Kubern
 
 While you can use the default vSAN storage policy, it is often preferable to craft a custom [vSphere Storage Policy](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-89091D59-D844-46B2-94C2-35A3961D23E7.html) based on the requirements of your applications. vSAN storage policies describe classes of storage (e.g. SSD, NVME, etc.) along with quotas for your clusters.
 
-![Diagram of vSphere with Tanzu on vSAN Storage](/img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt06.png)
+![Diagram of vSphere with Tanzu on vSAN Storage](img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt06.png)
 
 Starting with vSphere 7.0 environments with vSAN, the vSphere CSI driver for Kubernetes also supports the creation of NFS File Volumes, which support ReadWriteMany access modes. This allows for provisioning volumes, which can be read and written from multiple pods simultaneously. To support this, you must enable vSAN File Service.
 
@@ -162,7 +163,7 @@ The Supervisor Cluster leverages NSX Advanced Load Balancer (NSX ALB) to provide
 
 The following diagram shows a general overview for vSphere with Tanzu on vSphere Networking.
 
-![Overview diagram of vSphere with Tanzu on vSphere Networking](/img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt07.jpeg)
+![Overview diagram of vSphere with Tanzu on vSphere Networking](img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt07.jpeg)
 
 ### NSX Advanced Load Balancer Components
 
@@ -186,7 +187,7 @@ To deploy vSphere with Tanzu, build separate networks for the Tanzu Kubernetes G
 
 The network reference design can be mapped into this general framework.
 
-![Diagram of network reference design](/img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt08.jpg)
+![Diagram of network reference design](img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt08.jpg)
 
 **Note:** The network/portgroup designated for the workload cluster, carries both data and control traffic. Firewalls cannot be utilized to segregate traffic between workload clusters; instead, the underlying CNI must be employed as the main filtering system. Antrea CNI has the Custom Resource Definitions (CRDs) for firewall rules that can be enforce before Kubernetes network policy is added.
 
@@ -268,11 +269,11 @@ The following table provides a list of firewall rules based on the assumption th
 
 vSphere with Tanzu deployment starts with deploying the Supervisor cluster (Enabling Workload Management). The deployment is directly done from the vCenter user interface (UI). The Get Started page lists the pre-requisites for the deployment.
 
-![Screenshot of the vCenter integrated Workload Management page](/img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt09.jpg)
+![Screenshot of the vCenter integrated Workload Management page](img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt09.jpg)
 
 The vCenter UI shows that, in the current version, it is possible to install vSphere with Tanzu on the VDS networking stack as well as NSX-T Data Center as the networking solution.
 
-![Screenshot of the vCenter UI for configuring vSphere with Tanzu](/img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt10.jpg)
+![Screenshot of the vCenter UI for configuring vSphere with Tanzu](img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt10.jpg)
 
 This installation process takes you through the steps of deploying **Supervisor Cluster** in your vSphere environment. Once the Supervisor cluster is deployed, you can use either [Tanzu Mission Control](https://tanzu.vmware.com/mission-control) or Kubectl utility to deploy the Tanzu Kubernetes Shared Service and workload clusters.
 
@@ -386,7 +387,7 @@ If you are deploying Harbor without a publicly signed certificate, you must incl
 
   For VM-based deployments, the base VM for Harbor can be provisioned using the [VMOperator](https://github.com/vmware-tanzu/vm-operator).
 
-![Screenshot of Harbor Registry UI](.//img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt12.png)
+![Screenshot of Harbor Registry UI](./img/reference-designs/tko-on-vsphere-with-tanzu/tko-vwt12.png)
 
 ## vSphere with Tanzu SaaS Integration
 

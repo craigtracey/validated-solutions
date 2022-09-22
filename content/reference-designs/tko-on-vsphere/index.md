@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tko-on-vsphere.html
+title: VMware Tanzu for Kubernetes Operations on vSphere Reference Design
 ---
 # VMware Tanzu for Kubernetes Operations on vSphere Reference Design
 
@@ -9,20 +10,11 @@ This document describes a reference design for deploying VMware Tanzu for Kubern
 
 The following reference design is based on the architecture and components described in [VMware Tanzu for Kubernetes Operations Reference Architecture](index.md).
 
-![Tanzu for Kubernetes Operations components](/img/reference-designs/tko-on-vsphere/tkgm-diagram.png)
+![Tanzu for Kubernetes Operations components](img/reference-designs/tko-on-vsphere/tkgm-diagram.png)
 
 ## Supported Component Matrix
-The following table provides the component versions and interoperability matrix supported with the reference design:
 
-|**Software Components**|**Version**|
-| --- | --- |
-|Tanzu Kubernetes Grid|1.5.1|
-|VMware vSphere ESXi|7.0 U2 |
-|VMware vCenter (VCSA)|7.0 U2 and later|
-|VMware vSAN|7.0 U2 and later|
-|NSX Advanced LB|20.1.7|
-
-For the latest information, see [VMware Product Interoperability Matrix](https://interopmatrix.vmware.com/#/Interoperability?isHideGenSupported=true&isHideTechSupported=true&isHideCompatible=false&isHideIncompatible=false&isHideNTCompatible=true&isHideNotSupported=true&isCollection=false&col=551,5305&row=551,5305%262,5088,3457%26789,5823).
+{{< snippet "supported-component-matrix.md" >}}
 
 ## Tanzu Kubernetes Grid Components
 
@@ -68,7 +60,7 @@ Tanzu Kubernetes Grid is agnostic to which option you choose. For Kubernetes sta
 
 While the default vSAN storage policy can be used, administrators should evaluate the needs of their applications and craft a specific [vSphere Storage Policy](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-89091D59-D844-46B2-94C2-35A3961D23E7.html). vSAN storage policies describe classes of storage (For example, SSD or NVME) along with quotas for your clusters.
 
-![Tanzu for Kubernetes Grid storage integration with vSAN](/img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-2.png)
+![Tanzu for Kubernetes Grid storage integration with vSAN](img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-2.png)
 
 ## Tanzu Kubernetes Clusters Networking
 A Tanzu Kubernetes cluster provisioned by Tanzu Kubernetes Grid supports two Container Network Interface (CNI) options:
@@ -132,7 +124,7 @@ For the deployment of Tanzu Kubernetes Grid in the vSphere environment, it is re
 
 The network reference design can be mapped into this general framework.
 
-![Tanzu for Kubernetes Grid network layout](/img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-3.png)
+![Tanzu for Kubernetes Grid network layout](img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-3.png)
 
 This topology enables the following benefits:
 
@@ -205,11 +197,11 @@ You can deploy the management cluster in two ways:
 
 The Tanzu Kubernetes Grid Installation user interface shows that, in the current version, it is possible to install Tanzu Kubernetes Grid on vSphere (including VMware Cloud on AWS), AWS EC2, and Microsoft Azure. The UI provides a guided experience tailored to the IaaS, in this case, VMware vSphere.
 
-![Tanzu for Kubernetes Grid installer welcome screen](/img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-4.png)
+![Tanzu for Kubernetes Grid installer welcome screen](img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-4.png)
 
 The installation of Tanzu Kubernetes Grid on vSphere is done through the same installer UI but tailored to a vSphere environment.
 
-![Tanzu for Kubernetes Grid installer UI for vSphere](/img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-5.png)
+![Tanzu for Kubernetes Grid installer UI for vSphere](img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-5.png)
 
 This installation process will take you through the setup of a management cluster on your vSphere environment. Once the management cluster is deployed, you can make use of [Tanzu Mission Control](https://tanzu.vmware.com/mission-control) or Tanzu CLI to deploy Tanzu Kubernetes shared service and workload clusters.
 
@@ -260,7 +252,7 @@ For more information about Contour, see the [Contour](https://projectcontour.io/
 
 Another option is to use the NSX Advanced Load Balancer Kubernetes ingress controller which offers an advanced L7 ingress for containerized applications that are deployed in the Tanzu Kubernetes workload cluster.
 
-![NSX Advanced Load Balancing capabilities for VMware Tanzu](/img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-6.png)
+![NSX Advanced Load Balancing capabilities for VMware Tanzu](img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-6.png)
 
 For more information about the NSX Advanced Load Balancer ingress controller, see [Configuring L7 Ingress with NSX Advanced Load Balancer](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-kubernetes-grid-15/GUID-networking-configure-l7.html).
 
@@ -318,7 +310,7 @@ You may use one of the following methods to install Harbor:
 
 If you are deploying Harbor without a publicly signed certificate, you must include the Harbor root CA in your Tanzu Kubernetes Grid clusters. To do so, follow the procedure in [Trust Custom CA Certificates on Cluster Nodes](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-kubernetes-grid-15/GUID-cluster-lifecycle-secrets.html#trust-custom-ca-certificates-in-new-clusters-6).
 
-![Harbor Container Registry](/img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-7.png)
+![Harbor Container Registry](img/reference-designs/tko-on-vsphere/tko-on-vsphere-vds-7.png)
 
 ## Monitoring
 
@@ -331,7 +323,7 @@ Tanzu Kubernetes Grid includes signed binaries for Prometheus and Grafana that y
 
 You deploy Prometheus and Grafana on Tanzu Kubernetes clusters. The following diagram shows how the monitoring components on a cluster interact.
 
-![Monitoring components interaction in a cluster](/img/reference-designs/tko-on-vsphere/images-monitoring-stack.png)
+![Monitoring components interaction in a cluster](img/reference-designs/tko-on-vsphere/images-monitoring-stack.png)
 
 ## Logging
 

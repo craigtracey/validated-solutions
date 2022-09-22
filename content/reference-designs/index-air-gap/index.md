@@ -1,5 +1,6 @@
 ---
 url: reference-designs-index-air-gap.html
+title: VMware Tanzu Kubernetes Grid 1.5 Air-Gapped Reference Design and Deployment
 ---
 # VMware Tanzu Kubernetes Grid 1.5 Air-Gapped Reference Design and Deployment
 

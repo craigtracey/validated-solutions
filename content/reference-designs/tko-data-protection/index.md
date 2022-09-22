@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tko-data-protection.html
+title: Tanzu Kubernetes Grid Data Protection
 ---
 # Tanzu Kubernetes Grid Data Protection
 

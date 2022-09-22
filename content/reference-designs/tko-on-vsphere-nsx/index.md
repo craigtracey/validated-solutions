@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tko-on-vsphere-nsx.html
+title: VMware Tanzu for Kubernetes Operations on vSphere with NSX-T Reference Design
 ---
 # VMware Tanzu for Kubernetes Operations on vSphere with NSX-T Reference Design
 
@@ -9,21 +10,11 @@ This document lays out a reference architecture related for VMware Tanzu for Kub
 
 This reference design is based on the architecture and components described in [VMware Tanzu for Kubernetes Operations Reference Architecture](index.md)
 
-![Tanzu Edition reference architecture diagram](/img/reference-designs/tko-on-vsphere-nsx/tkgm-diagram.png)
+![Tanzu Edition reference architecture diagram](img/reference-designs/tko-on-vsphere-nsx/tkgm-diagram.png)
 
 ## Supported Component Matrix
 
-The validated Bill of Materials that can be used to install Tanzu Kubernetes Grid on your vSphere with NSX-T environment is as follows:
-
-|**Software Components**|**Version**|
-| --- | --- |
-|Tanzu Kubernetes Grid|1.5.1|
-|VMware vSphere ESXi|7.0 U2 and later|
-|VMware vCenter (VCSA)|7.0 U2 and later|
-|VMware vSAN|7.0 U2 and later|
-|NSX Advanced Load Balancer|20.1.7|
-
-For up-to-date information about which software versions can be used together, check the Interoperability Matrix [here](https://interopmatrix.vmware.com/Interoperability?col=551,&row=2,%26789,).
+{{< snippet "supported-component-matrix.md" >}}
 
 ## Tanzu Kubernetes Grid Components
 
@@ -69,7 +60,7 @@ Tanzu Kubernetes Grid is agnostic to which option you choose. For Kubernetes sta
 
 While the default vSAN storage policy can be used, administrators should evaluate the needs of their applications and craft a specific [vSphere Storage Policy](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-89091D59-D844-46B2-94C2-35A3961D23E7.html). vSAN storage policies describe classes of storage (For example, SSD or NVME) along with quotas for your clusters.
 
-![Tanzu for Kubernetes Grid storage integration with vSAN](/img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-2.jpg)
+![Tanzu for Kubernetes Grid storage integration with vSAN](img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-2.jpg)
 
 Starting with vSphere 7.0 environments with vSAN, the vSphere CSI driver for Kubernetes also supports the creation of NFS File Volumes, which support ReadWriteMany access modes. This allows for provisioning volumes, which can be read and written from multiple pods simultaneously. To support this, you must enable vSAN File Service.
 
@@ -138,7 +129,7 @@ For the deployment of Tanzu Kubernetes Grid in the vSphere environment, it is re
 
 The network reference design can be mapped into this general framework.
 
-![TKG with NSX-T Data Center Networking general network layout](/img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-3.png)
+![TKG with NSX-T Data Center Networking general network layout](img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-3.png)
 
 This topology enables the following benefits:
 
@@ -220,11 +211,11 @@ You can deploy the management cluster in two ways:
 
 The Tanzu Kubernetes Grid Installation user interface shows that, in the current version, it is possible to install Tanzu Kubernetes Grid on vSphere (including VMware Cloud on AWS), AWS EC2, and Microsoft Azure. The UI provides a guided experience tailored to the IaaS, in this case, VMware vSphere.
 
-![Tanzu for Kubernetes Grid installer welcome screen](/img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-4.png)
+![Tanzu for Kubernetes Grid installer welcome screen](img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-4.png)
 
 The installation of Tanzu Kubernetes Grid on vSphere is done through the same UI as mentioned above but tailored to a vSphere environment.
 
-![Tanzu for Kubernetes Grid installer UI for vSphere](/img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-5.png)
+![Tanzu for Kubernetes Grid installer UI for vSphere](img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-5.png)
 
 This installation process will take you through the setup of a management cluster on your vSphere environment. Once the management cluster is deployed, you can make use of [Tanzu Mission Control](https://tanzu.vmware.com/mission-control) or Tanzu CLI to deploy Tanzu Kubernetes shared service and workload clusters.
 
@@ -279,7 +270,7 @@ For more information about Contour, see the [Contour](https://projectcontour.io/
 
 Another option is to use the NSX Advanced Load Balancer Kubernetes ingress controller which offers an advanced L7 ingress for containerized applications that are deployed in the Tanzu Kubernetes workload cluster.
 
-![NSX Advanced Load Balancing capabilities for VMware Tanzu](/img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-6.png)
+![NSX Advanced Load Balancing capabilities for VMware Tanzu](img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-6.png)
 
 For more information about the NSX Advanced Load Balancer ingress controller, see [Configuring L7 Ingress with NSX Advanced Load Balancer](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-kubernetes-grid-15/GUID-networking-configure-l7.html).
 
@@ -307,7 +298,7 @@ You may use one of the following methods to install Harbor:
 
 If you are deploying Harbor without a publicly signed certificate, you must include the Harbor root CA in your Tanzu Kubernetes Grid clusters. To do so, follow the procedure in [Trust Custom CA Certificates on Cluster Nodes](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-kubernetes-grid-15/GUID-cluster-lifecycle-secrets.html#trust-custom-ca-certificates-in-new-clusters-6).
 
-![Harbor Container Registry](/img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-7.png)
+![Harbor Container Registry](img/reference-designs/tko-on-vsphere-nsx/tko-on-vsphere-nsxt-7.png)
 
 ## Logging
 

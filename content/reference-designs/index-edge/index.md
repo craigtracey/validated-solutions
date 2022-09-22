@@ -1,5 +1,6 @@
 ---
 url: reference-designs-index-edge.html
+title: VMware Tanzu Edge Solution Reference Architecture 1.0
 ---
 # VMware Tanzu Edge Solution Reference Architecture 1.0
 Edge computing is gaining a lot of momentum for a variety of reasons that range from avoidance of latency, data volume, and bandwidth considerations to the need for autonomous disconnected operations, privacy, and security. These reasons are pushing businesses across all industries to run more and more applications at edge sites. Traditionally, these applications are run on VMs, but with the emergence of Kubernetes and microservices architectures, more applications are being containerized and there is a need for running a cloud native compute stack at the edge.

@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tkg-nsxt-airgap-ra.html
+title: # Components
 ---
 ﻿# Tanzu Kubernetes Grid on vSphere with NSX-T Networking in Air-Gapped Environment Reference Design
 

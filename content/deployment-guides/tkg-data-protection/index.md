@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tkg-data-protection.html
+title: Enable Data Protection on a Workload Cluster and Configure Backup
 ---
 # Enable Data Protection on a Workload Cluster and Configure Backup
 

@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tko-to-customized-dashboard.html
+title: Customize Tanzu Observability Dashboard for Tanzu for Kubernetes Operations
 ---
 ﻿
 # Customize Tanzu Observability Dashboard for Tanzu for Kubernetes Operations

@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tkg-vsphere-vds-airgap.html
+title: # Supported Component Matrix
 ---
 ﻿# Deploy Tanzu Kubernetes Grid on vSphere Networking in an Air-Gapped Environment
 

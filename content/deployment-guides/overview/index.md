@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-overview.html
+title: Deploy Tanzu for Kubernetes Operations
 ---
 # Deploy Tanzu for Kubernetes Operations
 

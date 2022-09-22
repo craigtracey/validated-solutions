@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tap.html
+title: Tanzu Application Platform Deployment
 ---
 # Tanzu Application Platform Deployment
 

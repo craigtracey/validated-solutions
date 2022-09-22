@@ -1,9 +1,6 @@
 ---
 url: reference-designs-tkg-nsxt-airgap-ra.md.old.html
 ---
----
-url: reference-designs-tkg-nsxt-airgap-ra.md.old.html
----
 ﻿# Tanzu Kubernetes Grid on NSX-T Networking in Airgap Environment - Reference Design
 
 VMware Tanzu Kubernetes Grid (multi-cloud) provides organizations with a consistent, upstream-compatible, regional Kubernetes substrate that is ready for end-user workloads and ecosystem integrations. 

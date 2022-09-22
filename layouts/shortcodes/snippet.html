@@ -1,0 +1,3 @@
+{{ $arg := .Get 0 }}
+{{ $snippet := path.Join "snippets" $arg }}
+{{ os.ReadFile $snippet | markdownify }}

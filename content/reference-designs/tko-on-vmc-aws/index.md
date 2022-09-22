@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tko-on-vmc-aws.html
+title: VMware Tanzu for Kubernetes Operations on VMware Cloud on AWS Reference Design
 ---
 # VMware Tanzu for Kubernetes Operations on VMware Cloud on AWS Reference Design
 
@@ -11,7 +12,7 @@ This document lays out a reference design for deploying VMware Tanzu for Kuberne
 
 The following reference design is based on the architecture and components described in [VMware Tanzu for Kubernetes Operations Reference Architecture](index.md).
 
-![Tanzu Edition reference architecture diagram](/img/reference-designs/tko-on-vmc-aws/tkgm-diagram.png)
+![Tanzu Edition reference architecture diagram](img/reference-designs/tko-on-vmc-aws/tkgm-diagram.png)
 
 ## Supported Component Matrix
 The following table provides the component versions and interoperability matrix supported with the reference design:
@@ -84,7 +85,7 @@ Tanzu Kubernetes Grid is agnostic about which storage option you choose. For Kub
 
 While the default vSAN storage policy can be used, administrators should evaluate the needs of their applications and craft a specific [vSphere Storage Policy](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-89091D59-D844-46B2-94C2-35A3961D23E7.html). vSAN storage policies describe classes of storage (e.g. SSD, NVME, etc.) along with quotas for your clusters.
 
-![TKG  Storage integration example with vSAN](/img/reference-designs/tko-on-vmc-aws/tko-vmc-aws01.png)
+![TKG  Storage integration example with vSAN](img/reference-designs/tko-on-vmc-aws/tko-vmc-aws01.png)
 
 Starting with vSphere 7.0 environments with vSAN, the vSphere CSI driver for Kubernetes also supports the creation of NFS File Volumes, which support ReadWriteMany access modes. This allows for provisioning volumes, which can be read and written from multiple pods simultaneously. To support this, you must enable vSAN File Service.
 
@@ -159,7 +160,7 @@ For deployment of Tanzu Kubernetes Grid in VMware Cloud on AWS SDDCs, separate s
 
 The network reference design can be mapped into this general framework.
 
-![Network Layout for TKG in VMC on AWS](/img/reference-designs/tko-on-vmc-aws/tko-vmc-aws02.png)
+![Network Layout for TKG in VMC on AWS](img/reference-designs/tko-on-vmc-aws/tko-vmc-aws02.png)
 
 This topology provides the following benefits:
 
@@ -255,11 +256,11 @@ There are two ways to deploy the management cluster:
 
 The Tanzu Kubernetes Grid Installation user interface shows that, in the current version, it is possible to install Tanzu Kubernetes Grid on vSphere (including VMware Cloud on AWS), AWS EC2, and Microsoft Azure. The UI provides a guided experience tailored to the IaaS, in this case on VMware Cloud on AWS.
 
-![TKG installer user interface](/img/reference-designs/tko-on-vmc-aws/tko-vmc-aws03.jpg)
+![TKG installer user interface](img/reference-designs/tko-on-vmc-aws/tko-vmc-aws03.jpg)
 
 The installation of Tanzu Kubernetes Grid on VMware Cloud on AWS is done through the same UI as mentioned above but tailored to a vSphere environment.
 
-![TKG installer user interface for vSphere](/img/reference-designs/tko-on-vmc-aws/tko-vmc-aws04.png)
+![TKG installer user interface for vSphere](img/reference-designs/tko-on-vmc-aws/tko-vmc-aws04.png)
 
 This installation process takes you through setting up **TKG Management Cluster** on your vSphere environment. Once the management cluster is deployed, you can register the management cluster with Tanzu Mission Control and deploy Tanzu Kubernetes shared services and workload clusters directly from the  [Tanzu Mission Control](https://tanzu.vmware.com/mission-control) UI or Tanzu CLI to deploy Tanzu Kubernetes shared service and workload clusters.
 
@@ -316,7 +317,7 @@ For more information about Contour, see [Contour](https://projectcontour.io/) si
 
 Another option for ingress control is to use the NSX Advanced Load Balancer Kubernetes ingress controller which offers an advanced L7 ingress for containerized applications that are deployed in the Tanzu Kubernetes workload cluster.
 
-![NSX Advanced Load Balancing capabilities for VMware Tanzu](/img/reference-designs/tko-on-vmc-aws/tko-vmc-aws05.png)
+![NSX Advanced Load Balancing capabilities for VMware Tanzu](img/reference-designs/tko-on-vmc-aws/tko-vmc-aws05.png)
 
 For more information about the NSX ALB ingress controller, see the [official documentation](https://avinetworks.com/docs/ako/1.5/avi-kubernetes-operator/).
 
@@ -343,7 +344,7 @@ There are three main supported installation methods for Harbor:
 - [**Helm-based deployment**](https://goharbor.io/docs/2.4.0/install-config/harbor-ha-helm/) to a Kubernetes cluster - this installation method may be preferred for customers already invested in Helm.
 - [**VM-based deployment**](https://goharbor.io/docs/2.1.0/install-config/installation-prereqs/) using Docker Compose. VMware recommends this installation method when Tanzu Kubernetes Grid is installed in an air-gapped environment and there are no pre-existing Kubernetes clusters on which to install Harbor.
 
-![Harbor Container Registry](/img/reference-designs/tko-on-vmc-aws/tko-vmc-aws06.png)
+![Harbor Container Registry](img/reference-designs/tko-on-vmc-aws/tko-vmc-aws06.png)
 
 ## Logging
 

@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tkg-edge.html
+title: Architecture Overview
 ---
 # Architecture Overview
 
@@ -16,7 +17,7 @@ In this topology, the management plane resides entirely in the main data center.
 
 Once the edge site is deployed, Tanzu Mission Control is used for fleet management, allowing an easy way to manage and lifecycle Tanzu Kubernetes Grid workload clusters at the edge. Additional components for monitoring, backup, and log management can also be present in the main data center.
 
-![Hub and Spoke Topology](.//img/reference-designs/tkg-edge/tkg-edge-hub-spoke.drawio.png)
+![Hub and Spoke Topology](./img/reference-designs/tkg-edge/tkg-edge-hub-spoke.drawio.png)
 
 #### Key Features
 
@@ -30,7 +31,7 @@ In this topology, only the Tanzu Kubernetes Grid management cluster is located i
 Each edge site has the infrastructure management plane (vCenter, and NSX Advanced Load Balancer controllers, DNS servers and NTP server). This design provides a better availability when the edge site gets disconnected from the main data center.
 Additional component for monitoring, backup, and log management can also be installed at the edge site to provide the functionality locally.
 
-![Hybrid Topology](.//img/reference-designs/tkg-edge/tkg-edge-hybrid.drawio.png)
+![Hybrid Topology](./img/reference-designs/tkg-edge/tkg-edge-hybrid.drawio.png)
 
 #### Key Features
 
@@ -43,7 +44,7 @@ Additional component for monitoring, backup, and log management can also be inst
 In this topology, each edge site has a full-stack infrastructure management plane which includes vCenter, NSX Advanced Load Balancer Controllers and Tanzu Kubernetes Grid management cluster. Each edge site is considered as a separate data center and can operate independently.
 Tanzu Mission Control is used for fleet management, allowing an easy way to create, manage and lifecycle Tanzu Kubernetes Grid workload clusters at the edge.
 
-![Data center Fleet Topology](.//img/reference-designs/tkg-edge/tkg-edge-dc-fleet.drawio.png)
+![Data center Fleet Topology](./img/reference-designs/tkg-edge/tkg-edge-dc-fleet.drawio.png)
 
 #### Key Features
 
@@ -131,7 +132,7 @@ Tanzu Kubernetes Grid can work on a flat Layer-2 network. However, for better se
 
 A /24 network can be split in smaller networks if needed.
 
-![Networking at the Edge](.//img/reference-designs/tkg-edge/tko-edge-networking.drawio.png)
+![Networking at the Edge](./img/reference-designs/tkg-edge/tko-edge-networking.drawio.png)
 
 #### List of networks at the Edge
 The following table provides a list of the networks at the edge site.
@@ -175,7 +176,7 @@ Proxy can be configured individually on a per-cluster basis at deployment time.
 - Connection to Tanzu Mission Control.
 - Connection to Tanzu Observability.
 
-![Proxy](.//img/reference-designs/tkg-edge/e091590baba38bf13203c4166893699c.png)
+![Proxy](./img/reference-designs/tkg-edge/e091590baba38bf13203c4166893699c.png)
 
 #### Network Security
 
@@ -239,19 +240,19 @@ While the solutions work with Tanzu Kubernetes Grid, they require VMware Profess
 
 ##### GPU Passthrough
 
-![GPU Passthrough](.//img/reference-designs/tkg-edge/f3a9b5e3df9d8c442b112da8fd660613.png)
+![GPU Passthrough](./img/reference-designs/tkg-edge/f3a9b5e3df9d8c442b112da8fd660613.png)
 
 The entire GPU card is passed to the VM. It requires the GPU card to be present in the server where the VM runs. With this configuration, virtual machines cannot migrate between servers.
 
 ##### BitFusion
 
-![BitFusion](.//img/reference-designs/tkg-edge/91aa78cae6af4261e49171516d5cecb9.png)
+![BitFusion](./img/reference-designs/tkg-edge/91aa78cae6af4261e49171516d5cecb9.png)
 
 One or multiple servers servers with GPU are present at the edge site. Through Bitfusion technology, the GPU can be remotely consumed through the network by workloads located on other servers at the Edge.
 
 ##### NVIDIA GRID
 
-![NVIDIA GRID](.//img/reference-designs/tkg-edge/b7fb5735e266dfaca19d1c5c45e64a3e.png)
+![NVIDIA GRID](./img/reference-designs/tkg-edge/b7fb5735e266dfaca19d1c5c45e64a3e.png)
 
 One or multiple GPU cards are shared by VMs running on the same server. This configuration leverages the NVIDIA GRID Virtual GPU Manager to share GRID-supported GPU amongst multiple virtual machines. Virtual machines may be migrated between servers as long as the hardware supports it.
 
@@ -352,7 +353,7 @@ NSX Advanced Load Balancer can be used to provide HA for control plane endpoints
 
 As time of writing the only supported solution to provide Load-Balancing with Tanzu Kubernetes Grid deployed on vSphere is NSX Advanced Load Balancer. Through the AKO architecture it easy and efficient to create and manage load balancer services across Workload Clusters.
 
-![Workloads Load Balancing](.//img/reference-designs/tkg-edge/464ec91366a4b9ec9273ddb6b0c87804.png)
+![Workloads Load Balancing](./img/reference-designs/tkg-edge/464ec91366a4b9ec9273ddb6b0c87804.png)
 
 #### Considerations for NSX Advanced Load Balancer Service Engines
 
@@ -396,15 +397,15 @@ Tanzu Editions also includes [Contour](https://projectcontour.io/) for Kubernete
 
 [Harbor Container Registry](https://goharbor.io/) can be deployed to both the centralized data center as well as to each edge site.  Using Harbor, replications can be configured such that all container images which get pushed into the centralized harbor are automatically replicated to each edge. Each edge deployment can reference its local harbor for efficient network resource utilization.
 
-![Harbor registry federated topology](.//img/reference-designs/tkg-edge/tkg-edge-harbor.drawio.png)
+![Harbor registry federated topology](./img/reference-designs/tkg-edge/tkg-edge-harbor.drawio.png)
 
 [Replications](https://goharbor.io/docs/2.0.0/administration/configuring-replication/create-replication-rules/) can be defined as manual, scheduled, or event-based.  Manual or scheduled are best suited for initial bulk syncs, where-as event-based can be used to replicate changes on-going.
 
 Schedule replication during low activity (outside of working hours).
 
-![Harbor edge site replications](.//img/reference-designs/tkg-edge/f312de8ea37cad334af63d608a37f3d6.png)
+![Harbor edge site replications](./img/reference-designs/tkg-edge/f312de8ea37cad334af63d608a37f3d6.png)
 
-![Harbor registry webhooks for edge site continuous delivery](.//img/reference-designs/tkg-edge/0547aae877598d9975f066451cb5b268.png)
+![Harbor registry webhooks for edge site continuous delivery](./img/reference-designs/tkg-edge/0547aae877598d9975f066451cb5b268.png)
 
 ### At the Edge
 
@@ -770,7 +771,7 @@ In the Tanzu Mission Control resource hierarchy, you can specify policies at the
 
 With Tanzu Mission Control you can group clusters based on different types of sites and manage fleets of clusters instead of managing them individually. When we are dealing with large scale edge deployments this becomes very critical as customers might have two or three different types of sites. Being able to group them with cluster groups, looking at individual fleet health, performing collective operations is key for edge deployments. Figure X shows an overview of the cluster group.
 
-![Managing the edge cluster fleet using Tanzu Mission Control](.//img/reference-designs/tkg-edge/ce29c1e20bf0ecc1ffe2dfdc658cb585.png)
+![Managing the edge cluster fleet using Tanzu Mission Control](./img/reference-designs/tkg-edge/ce29c1e20bf0ecc1ffe2dfdc658cb585.png)
 
 #### Policy Management Example
 
@@ -784,9 +785,9 @@ Policies allow you to provide a set of rules that govern your organization and a
 
 The following figures showcase how customers can create policies and use the policy insights page to review if any of the policies are violated across all the edge deployments.
 
-![Using Tanzu Mission Control to manage edge cluster policies](.//img/reference-designs/tkg-edge/a93e92ad27bee927a258c5447a3ed78d.png)
+![Using Tanzu Mission Control to manage edge cluster policies](./img/reference-designs/tkg-edge/a93e92ad27bee927a258c5447a3ed78d.png)
 
-![Policy reporting across all edge sites](.//img/reference-designs/tkg-edge/559bfe3fa044f89dab66d033ee2168cf.png)
+![Policy reporting across all edge sites](./img/reference-designs/tkg-edge/559bfe3fa044f89dab66d033ee2168cf.png)
 
 #### Usage Considerations
 
@@ -849,7 +850,7 @@ The metrics can originate from your infrastructure or application. Kubernetes cl
 
 Tanzu Observability is operated following a SaaS model, so outbound internet connectivity is required at edge sites.
 
-![Edge Kubernetes Cluster fleet observability](.//img/reference-designs/tkg-edge/b24ac18e57b053174782c87492b3644d.png)
+![Edge Kubernetes Cluster fleet observability](./img/reference-designs/tkg-edge/b24ac18e57b053174782c87492b3644d.png)
 
 Tanzu Kubernetes Grid also supports Grafana and Prometheus as alternative on premises solutions that can be used for monitoring.
 

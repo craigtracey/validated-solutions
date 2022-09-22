@@ -1,5 +1,6 @@
 ---
 url: reference-designs-index.html
+title: VMware Tanzu for Kubernetes Operations Reference Architecture 1.5
 ---
 # VMware Tanzu for Kubernetes Operations Reference Architecture 1.5
 
@@ -7,7 +8,7 @@ Kubernetes is great platform that provides development teams with a single API t
 
 The following diagram provides a high-level reference architecture for deploying the components available with Tanzu for Kubernetes Operations as a solution. 
 
-![Tanzu Edition reference architecture diagram](.//img/reference-designs/index/tkgm-diagram.png)
+![Tanzu Edition reference architecture diagram](./img/reference-designs/index/tkgm-diagram.png)
 
 The reference architecture documentation provides several reference designs and the instructions for deploying the reference designs. The reference designs are based on the high-level reference architecture and they are tailored for deploying Tanzu for Kubernetes Operations on your IaaS or infrastructure of choice.
 

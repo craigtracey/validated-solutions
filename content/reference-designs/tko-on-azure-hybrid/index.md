@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tko-on-azure-hybrid.html
+title: VMware Tanzu Kubernetes Grid on Hybrid-Cloud Azure
 ---
 # VMware Tanzu Kubernetes Grid on Hybrid-Cloud Azure
 
@@ -18,7 +19,7 @@ The solution areas for a hybrid-cloud-accessible TKGm solution can be summarized
 
 Further, though TKO components are assumed to be in the cloud environment, the solution allows for hybrid placement and each location can reach the other.
 
-![Overview Hybrid Cloud TKG Architecture](/img/reference-designs/tko-on-azure-hybrid/tkgm-azure-hybrid.png)
+![Overview Hybrid Cloud TKG Architecture](img/reference-designs/tko-on-azure-hybrid/tkgm-azure-hybrid.png)
 
 ## Network & WAN Architecture
 

@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tko-on-aws-airgap.html
+title: VMware Tanzu Kubernetes Grid on AWS Air-Gapped Reference Design
 ---
 # VMware Tanzu Kubernetes Grid on AWS Air-Gapped Reference Design
 

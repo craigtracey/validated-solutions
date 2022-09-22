@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tkg-vsphere-vds-airgap.html
+title: Tanzu Kubernetes Grid on vSphere Networking in an Air-Gapped Environment Reference Design
 ---
 # Tanzu Kubernetes Grid on vSphere Networking in an Air-Gapped Environment Reference Design
 

@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tkg-nsxt-airgap.html
+title: # Supported Component Matrix
 ---
 ﻿# Deploy Tanzu Kubernetes Grid on vSphere with NSX-T Networking in Air-gapped Environment
 

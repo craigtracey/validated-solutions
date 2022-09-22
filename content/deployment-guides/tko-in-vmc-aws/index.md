@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tko-in-vmc-aws.html
+title: Deploy Tanzu for Kubernetes Operations on VMware Cloud on AWS
 ---
 # Deploy Tanzu for Kubernetes Operations on VMware Cloud on AWS
 

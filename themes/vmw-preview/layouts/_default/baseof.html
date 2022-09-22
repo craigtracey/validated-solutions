@@ -87,8 +87,16 @@
             <div
               class="rhs-top-container-top d-flex flex-row justify-content-between"
             >
-              <div class="primary-header" id="page-heading-id"></div>
+            <h1 class="primary-header" id={{ replace .Title " " "-" | lower }} >{{ .Title }}</h1>
             </div>
+
+            {{ if eq hugo.Environment "development" }}
+            {{ $projectPath := or (os.Getenv "HUGO_PROJECT_PATH" ) (os.Getenv "PWD") }}
+            <a href="vscode://file/{{ $projectPath }}/content/{{ .File.Path }}" class="button">
+              Edit This Page
+            </a>
+            {{ end }}
+
             <div
               class="rhs-top-container-middle d-flex flex-row justify-content-between"
             ></div>

@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tko-on-vsphere-nsxt.html
+title: Deploy VMware Tanzu for Kubernetes Operations on VMware vSphere with VMware NSX-T
 ---
 # Deploy VMware Tanzu for Kubernetes Operations on VMware vSphere with VMware NSX-T
 

@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tko-on-vsphere-with-tanzu.html
+title: Deploy Tanzu for Kubernetes Operations using vSphere with Tanzu
 ---
 # Deploy Tanzu for Kubernetes Operations using vSphere with Tanzu
 

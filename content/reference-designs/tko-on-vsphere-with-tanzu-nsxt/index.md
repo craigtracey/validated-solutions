@@ -1,5 +1,6 @@
 ---
 url: reference-designs-tko-on-vsphere-with-tanzu-nsxt.html
+title: VMware Tanzu for Kubernetes Operations using vSphere with Tanzu on NSX-T Reference Design
 ---
 # VMware Tanzu for Kubernetes Operations using vSphere with Tanzu on NSX-T Reference Design
 
@@ -25,9 +26,9 @@ This document lays out a reference design for deploying VMware Tanzu for Kuberne
 
 	vSphere with Tanzu offers several default VM classes. You can use them as is or you can create new VM classes. The default VM classes that are available in vSphere with Tanzu are shown in the following images.
 
-	![VM Classes in vSphere with Tanzu](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image2.png)
+	![VM Classes in vSphere with Tanzu](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image2.png)
 
-	![VM Classes in vSphere with Tanzu](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image5.png)
+	![VM Classes in vSphere with Tanzu](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image5.png)
 
 - **Storage Classes in vSphere with Tanzu:** A storage class provides a way for administrators to describe the classes of storage they offer. Different classes can map to quality-of-service levels, or to backup policies, or to arbitrary policies determined by the cluster administrators.
 
@@ -42,7 +43,7 @@ This document lays out a reference design for deploying VMware Tanzu for Kuberne
 
 The following diagram shows the high-level architecture of vSphere with Tanzu deployed with the VCF SDDC Reference Architecture.
 
-![vSphere with Tanzu Architecture](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image11.png)
+![vSphere with Tanzu Architecture](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image11.png)
 
 The Supervisor Cluster consists of the following components:
 
@@ -52,11 +53,11 @@ The Supervisor Cluster consists of the following components:
 
 The following diagram shows the general architecture of the Supervisor Cluster.
 
-![Supervisor Cluster Architecture](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image12.png)
+![Supervisor Cluster Architecture](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image12.png)
 
 After a Supervisor Cluster is created, the vSphere administrator creates vSphere Namespaces. When initially created, the namespace has unlimited resources within the Supervisor Cluster. The vSphere administrator defines the limits for CPU, memory, storage, and the number of Kubernetes objects that can run within the namespace. These limits are configured per vSphere Namespace.
 
-![vSphere Namespaces](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image10.png)
+![vSphere Namespaces](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image10.png)
 
 To provide tenants access to namespaces, the vSphere administrator assigns permission to users or groups available within an identity source that is associated with vCenter Single Sign-On.
 
@@ -92,7 +93,7 @@ For Kubernetes stateful workloads, vSphere with Tanzu installs the [vSphere Cont
 
 While the default vSAN storage policy can be used, administrators should evaluate the needs of their applications and configure a specific [vSphere Storage Policy](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-89091D59-D844-46B2-94C2-35A3961D23E7.html). vSAN storage policies describe classes of storage, such as SSD and NVME, as well as quota definitions for the vSAN cluster.
 
-![vSphere with Tanzu on vSAN Storage](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image9.png)
+![vSphere with Tanzu on vSAN Storage](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image9.png)
 
 Starting with vSphere 7.0 environments with vSAN, the vSphere CSI driver for Kubernetes also supports the creation of NFS File Volumes, which support ReadWriteMany access modes. This allows for provisioning volumes, which can be read and written from multiple pods simultaneously. To support this, you must enable vSAN File Service.
 
@@ -138,7 +139,7 @@ The Supervisor Cluster leverages the NSX-T load balancer to provide L4 load bala
 
 The following diagram shows a general overview for vSphere with Tanzu on vSphere Networking. 
 
-![vSphere with Tanzu on NSX-T Networking](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image8.png)
+![vSphere with Tanzu on NSX-T Networking](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image8.png)
 
 A brief description of all networking components and services included in the Supervisor Cluster networking is as follows:
 
@@ -325,9 +326,9 @@ In addition to the direct policy defined for a given object, each object also ha
 
 Tanzu Kubernetes Grid includes extensions for Prometheus and Grafana to allow you to monitor Tanzu Kubernetes Grid cluster metrics. The following images show examples of cluster metrics as visualized data in Grafana:
 
-![TKG Cluster metrics in Grafana](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image13.png)
+![TKG Cluster metrics in Grafana](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image13.png)
 
-![TKG Cluster API Server Uptime metrics](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image14.png)
+![TKG Cluster API Server Uptime metrics](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image14.png)
 
 You can install Prometheus and Grafana by using Tanzu packages. For more information, see [Implementing Monitoring with Prometheus and Grafana](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-kubernetes-grid-15/GUID-packages-monitoring.html).
 
@@ -374,80 +375,80 @@ Some sample dashboards are as follows. Tanzu Observability can display metric da
 
 **ESXi Host summary**
 
-![ESXi Host summary](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image15.png)
+![ESXi Host summary](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image15.png)
 
 **ESXi CPU usage**
 
-![ESXi CPU usage](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image16.png)
+![ESXi CPU usage](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image16.png)
 
 **ESXi Memory usage**
 
-![ESXi Memory usage](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image17.png)
+![ESXi Memory usage](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image17.png)
 
 **ESXi Storage performance**
 
-![ESXi Storage performance](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image18.png)
+![ESXi Storage performance](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image18.png)
 
 **ESXi Network performance**
 
-![ESXi Network performance](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image19.png)
+![ESXi Network performance](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image19.png)
 
 #### VM Dashboards
 
 **VM CPU usage**
 
-![VM CPU usage](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image20.png)
+![VM CPU usage](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image20.png)
 
 **VM Memory usage**
 
-![VM Memory usage](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image21.png)
+![VM Memory usage](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image21.png)
 
 **VM Disk performance**
 
-![VM Disk performance](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image22.png)
+![VM Disk performance](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image22.png)
 
 **VM Network performance**
 
-![VM Network performance](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image23.png)
+![VM Network performance](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image23.png)
 
 #### Storage Dashboards
 
 **Datastore performance**
 
-![Datastore performance](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image24.png)
+![Datastore performance](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image24.png)
 
 #### Kubernetes Dashboards
 
 **Summary for one or more Kubernetes clusters**
 
-![Summary for one or more Kubernetes clusters](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image25.png)
+![Summary for one or more Kubernetes clusters](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image25.png)
 
 **Cluster level metrics of a specific cluster**
 
-![Cluster level metrics of a specific cluster](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image26.png)
+![Cluster level metrics of a specific cluster](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image26.png)
 
 
 #### Application Dashboards
 
 **Istio Service Mesh summary (example)**
 
-![Istio Service Mesh summary (example)](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image27.png)
+![Istio Service Mesh summary (example)](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image27.png)
 
 **Istio Service Mesh details (example)**
 
-![Istio Service Mesh details (example)](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image28.png)
+![Istio Service Mesh details (example)](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image28.png)
 
 **Application Overview - microservices aware out of the box**
 
-![Application Overview - microservices aware out of the box](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image29.png)
+![Application Overview - microservices aware out of the box](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image29.png)
 
 **Detailed Application Dashboards - out of the box**
 
-![Detailed Application Dashboards - out of the box](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image30.png)
+![Detailed Application Dashboards - out of the box](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image30.png)
 
 **Automatic Distributed Tracing information between (micro)services**
 
-![Automatic Distributed Tracing information between (micro)services](/img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image31.png)
+![Automatic Distributed Tracing information between (micro)services](img/reference-designs/tko-on-vsphere-with-tanzu-nsxt/image31.png)
 
 To view and download integrations with prebuilt dashboards that are available in Wavefront, see [Integrations](https://vmware.wavefront.com/integrations) on the VMware Tanzu Observability site.
 

@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tko-aws-airgap.html
+title: Deploy Tanzu Kubernetes Grid on AWS in an Air-Gapped Environment
 ---
 # Deploy Tanzu Kubernetes Grid on AWS in an Air-Gapped Environment
 

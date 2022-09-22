@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tko-aws.html
+title: Deploy Tanzu for Kubernetes Operations on AWS
 ---
 # Deploy Tanzu for Kubernetes Operations on AWS
 

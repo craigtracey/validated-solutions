@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-pinniped-with-tkg.html
+title: Prepare External Identity Management
 ---
 # Prepare External Identity Management
 

@@ -1,5 +1,6 @@
 ---
 url: deployment-guides-tkg-package-install.html
+title: Deploy User-Managed Packages in Workload Clusters
 ---
 # Deploy User-Managed Packages in Workload Clusters
 
