@@ -1,0 +1,219 @@
+/*!
+ *
+ * VMware CSS overrides and additions
+ *
+ */
+ 
+html:after {
+
+  /* common custom values */
+  content: ""; /* your site name */
+  font-size: 720%;         /* font size */
+  color: rgba(0, 0, 0, .1);
+  /* alpha, could be even rgba(0,0,0,.05) */
+
+  /* rest of the logic */
+  z-index: 9999;
+  cursor: default;
+  display: block;
+  position: fixed;
+  top: 33%;
+  right: 0;
+  bottom: 0;
+  left: 15%;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  line-height: 100%;
+
+  /* not sure about who implemented what ..
+    ... so bring it all */
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  -o-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}  
+ 
+
+.apiname {
+  font-family: monospace;
+}
+
+.cmdname {
+  font-family: monospace;
+}
+
+.ullinks {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.menucascade > abbr {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+li {
+  margin-top: 0.6em;
+}
+
+li.topicref {
+  margin-top: 0.0em;
+}
+
+/* Hide all reltable links */
+
+.relconcepts {
+  display: none;
+}
+
+.reltasks {
+  display: none;
+}
+
+.relref {
+  display: none;
+}
+
+.relinfo {
+  display: none;
+}
+
+/* definition lists */
+
+.dt {
+  margin-top: 1em;
+}
+
+.dd {
+  margin-top: 1em;
+}
+
+dt.prereq {
+  margin-left: 20px;
+}
+
+/* notes */
+
+.note {
+  border-top: 2px solid #d1d2d3; /* rgb(209,210,211) = light gray */
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-bottom: 2px solid #d1d2d3; /* rgb(209,210,211) = light gray */
+}
+
+.note .note__title {
+  display: block; /* To match current styling due to an extra <p> but may not be necessary */
+  margin-bottom: 1em;
+}
+
+/* figures */
+
+figcaption {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333333; /* rgb(51,51,51) = dark charcoal gray */
+}
+
+span.fig--title-label {
+  display: none;
+}
+
+/* tables */
+
+span.table--title-label {
+  display: none;
+}
+
+table caption {
+  font-weight: bold;
+  color: #333333; /* rgb(51,51,51) = dark charcoal gray */
+}
+
+thead {
+  border-color: #999999; /* rgb(153,153,153) = medium gray */
+  border-style: solid;
+  border-width: 1px;
+  background-color: #999999; /* rgb(153,153,153) = medium gray */
+  padding-top: .1em;
+  padding-bottom: .1em;
+  width: 100%;
+  color: #ffffff; /* black */
+}  
+
+/* simpletable */
+
+table.simpletable ul {
+  list-style-type: square;
+  padding-left: 1em;
+}
+
+table.simpletable li {
+  padding-left: .5em;
+}
+
+/* override reference tables that are hardcoded with a border */
+table.simpletable.properties.simpletableborder {
+  border-color: white;
+}
+
+.stentry {
+  border-right: 0px;
+  border-bottom: 1px solid;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+/* choicetable */
+
+table.choicetable {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/* main-container */
+
+/* needed to override explicit color formatting in CDF style sheets */
+.main-container .rhs-center .right-panel .table .table {
+  background-color: inherit;
+}
+
+.main-container .rhs-center .right-panel main img {
+  display: inline;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Start VIX-2103 */
+
+.info {
+  margin-top: 1em;
+}
+
+.stepresult {
+  margin-top: 1em;
+}
+
+.stepxmp {
+  margin-top: 1em;
+}
+
+/* End VIX-2103 */
